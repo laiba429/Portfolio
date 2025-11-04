@@ -46,18 +46,21 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative; 
+    position: relative;
 }
 
 
-nav > .menu-lab { order: 4; }
+nav>.menu-lab {
+    order: 4;
+}
 
 .mobile-toggle {
-    display: none; 
-    
+    display: none;
+
 }
+
 .menu-lab {
-    display: none; 
+    display: none;
     cursor: pointer;
     width: 44px;
     height: 44px;
@@ -69,7 +72,7 @@ nav > .menu-lab { order: 4; }
 .menu-lab span,
 .menu-lab span::before,
 .menu-lab span::after {
-    
+
     display: block;
     background: var(--dark);
     height: 3px;
@@ -78,14 +81,21 @@ nav > .menu-lab { order: 4; }
     position: relative;
     transition: all 0.25s ease;
 }
+
 .menu-lab span::before,
 .menu-lab span::after {
     content: "";
     position: absolute;
     left: 0;
 }
-.menu-lab span::before { top: -7px; }
-.menu-lab span::after { top: 7px; }
+
+.menu-lab span::before {
+    top: -7px;
+}
+
+.menu-lab span::after {
+    top: 7px;
+}
 
 .logo {
     font-size: 1.5rem;
@@ -122,7 +132,7 @@ nav > .menu-lab { order: 4; }
 .social-link {
     width: 42px;
     height: 42px;
-    background:var(--primary);
+    background: var(--primary);
     border-radius: var(--radius-full);
     display: flex;
     align-items: center;
@@ -197,8 +207,9 @@ nav > .menu-lab { order: 4; }
     width: 100%;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
-    
+
 }
+
 .hero-buttons {
     display: flex;
     gap: 1rem;
@@ -387,19 +398,19 @@ footer {
 @media (max-width: 768px) {
     .menu-lab {
         display: flex;
-        
+
     }
 
     .social-links {
-        display: flex; 
+        display: flex;
         padding-right: 20px;
     }
 
     .nav-links {
         display: none;
     }
-   
-    .mobile-toggle:checked + .menu-lab + .nav-links {
+
+    .mobile-toggle:checked+.menu-lab+.nav-links {
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
@@ -411,7 +422,7 @@ footer {
         box-shadow: var(--shadow-md);
     }
 
-    .mobile-toggle:checked + .menu-lab + .nav-links a {
+    .mobile-toggle:checked+.menu-lab+.nav-links a {
         padding: 0.2rem 1rem;
         display: block;
     }

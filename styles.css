@@ -5,8 +5,8 @@
 }
 
 :root {
-    --primary: #db3482;
-    --secondary: #a71273;
+    --primary: #c834db;
+    --secondary: #a212a7;
     --dark: #111827;
     --light: #f8f9fc;
     --gray: #6b7280;
@@ -39,64 +39,53 @@ header {
     backdrop-filter: blur(8px);
 }
 
-nav {.menu-checkbox {
-    display: none;
-}
-
-.menu-toggle {
-    display: none;
-    cursor: pointer;
-    padding: 0;
-    width: 30px;
-    height: 24px;
-    position: relative;
-    z-index: 100;
-}
-
-.menu-toggle span {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: var(--accent);
-    margin: 5px 0;
-    transition: all 0.3s ease;
-}
-
-@media (max-width: 760px) {
-    .header-inner {
-        gap: 12px;
-        position: relative;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .main-nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        margin-top: 10px;
-        background: var(--bg);
-        padding: 20px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        border-radius: 0 0 12px 12px;
-        text-align: center;
-    }
-
-    .main-nav a {
-        display: block;
-        padding: 8px 0;
-    }
+nav {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative; 
 }
+
+
+nav > .menu-lab { order: 4; }
+
+.mobile-toggle {
+    display: none; 
+    
+}
+.menu-lab {
+    display: none; 
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.menu-lab span,
+.menu-lab span::before,
+.menu-lab span::after {
+    
+    display: block;
+    background: var(--dark);
+    height: 3px;
+    width: 22px;
+    border-radius: 2px;
+    position: relative;
+    transition: all 0.25s ease;
+}
+.menu-lab span::before,
+.menu-lab span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+.menu-lab span::before { top: -7px; }
+.menu-lab span::after { top: 7px; }
 
 .logo {
     font-size: 1.5rem;
@@ -149,6 +138,7 @@ nav {.menu-checkbox {
     color: var(--white);
     transform: translateY(-2px);
 }
+
 
 /* Hero Section */
 .hero {
@@ -261,6 +251,7 @@ nav {.menu-checkbox {
     box-shadow: var(--shadow-md);
 }
 
+
 /* About Section */
 .about {
     padding: 6rem 2rem;
@@ -281,8 +272,6 @@ nav {.menu-checkbox {
     position: relative;
     padding-bottom: 1rem;
 }
-
-
 
 .about-grid {
     display: grid;
@@ -322,6 +311,7 @@ nav {.menu-checkbox {
     color: var(--primary);
     box-shadow: var(--shadow-sm);
 }
+
 
 /* Contact Section */
 .contact {
@@ -394,12 +384,36 @@ footer {
 
 
 
-
-
-/* Responsive Design */
 @media (max-width: 768px) {
+    .menu-lab {
+        display: flex;
+        
+    }
+
+    .social-links {
+        display: flex; 
+        padding-right: 20px;
+    }
+
     .nav-links {
         display: none;
+    }
+   
+    .mobile-toggle:checked + .menu-lab + .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        position: absolute;
+        right: 0.5rem;
+        top: 120%;
+        background: var(--white);
+        padding: 1rem;
+        box-shadow: var(--shadow-md);
+    }
+
+    .mobile-toggle:checked + .menu-lab + .nav-links a {
+        padding: 0.2rem 1rem;
+        display: block;
     }
 
     .hero-content {
